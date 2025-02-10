@@ -1,0 +1,25 @@
+target-version="py39"
+line-length=120
+
+[lint]
+# Need to tell ruff about isort https://github.com/astral-sh/ruff/issues/8926
+# Enable additional rules
+extend-select = [
+    "I",    # isort
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+    "PLC",  # pylint convention
+    "PLE",  # pylint error
+    "PLR",  # pylint refactor
+    "PLW",  # pylint warning
+    "RUF",  # ruff-specific rules
+    "UP",   # pyupgrade
+    "TID",  # flake8-tidy-imports
+]
+
+[lint.isort]
+force-single-line=true
+
+[lint.flake8-tidy-imports]
+# rules about import styles and patterns. Can ban a module from being imported.
+ban-relative-imports = "all"  # no 'import ..models'
